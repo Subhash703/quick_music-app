@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Music : Listen your Favorite Music</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="external__wrapper">
+        <div class="background"></div>
+        <nav class="navbar">
+            <div class="nav_inner">
+                <div class="nav_logo">
+                    QuickMusic                   
+                </div>
+                <div class="nav_search-bar">
+                    <div class="input-wrapper">
+                        <input type="text" id="searchInput" class="search-bar" placeholder="Search your favorite music..." spellcheck="false" class="ui-autocomplete-input" autocomplete="off">
+                        <span class="bg"></span>
+                        <span class="searchIcon"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="outer-wrapper">
+        <section class="music_wrapper">
+            <div class="musci_list">
+                <div class="music_card">
+                    <img src="./src/img1.jpg" alt="Someone you loved">
+                    <div class="music_details">
+                        <h3 class="music_heading">I Tried So Hard - Linkin Park</h3>
+                        <spna class="music_achivements">
+                            <span class="ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                            <span class="singer_name"><i class="fas fa-user"></i> Linkin Park</span>
+                            <spam class="published_year">2 year ago</spam>
+                            <span class="played-times"><i class="fas fa-play"></i>83.4k</span>
+                        </spna>
+                        <p class="music_description">
+                            linking park, one of the best singers ,In The End - Linkin Park (With) music file uploaded on Aug 21st, 2008 by Liamuzumaki.
+                        </p>
+
+                        <div class="control_btns">
+                            <span id="playBtn">
+                                Play
+                            </span>
+                            <span id="pauseBtn">
+                                Pause
+                            </span>
+                            <span class="share">
+                                <i class="fas fa-share"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artist_albums">
+                <h>Hello</h1>
+            </div>
+        </section>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
