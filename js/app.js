@@ -46,19 +46,57 @@ searchInput.keyup = () =>{
 }
 
 const musicList = document.querySelector('.musci_list');
-
+let current = 0;
 const addSongToList = ()=>{
     const musicCard = document.createElement('div');
     musicCard.classList.add('music_card');
+
+    const img = document.createElement('img');
+    img.src = EnglishMusic[current].url;
+    
+    img.setAttribute("alt",`${EnglishMusic[current].songName}`);
+    musicCard.appendChild(img);
+    
+    const musicDetail = document.createElement('div')
+        .classList.add(music_details);
+    
+    const heading = document.createElement('h3').classList.add('music_heading');
+    heading.innerText = EnglishMusic[current].songName;
+    
+    musicDetail.appendChild(heading);
+
+    const achivements = document.createElement('span').classList.add(music_achivements);
+
+    const ratings = document.createElement('span').classList.add('ratings');
+    
+    ratings.innerText = `"&#9733".${repeat(EnglishMusic[current].ratings)} + "&#9734".${repeat(5 - EnglishMusic[current].ratings)}`;
+    
+    achivements.appendChild(ratings);
+
+    const singerName = document.createElement('span').classList.add('singer_name');
+    
+    singerName.innerText = `${EnglishMusic[current].singerName}`;
+    singerName.innerText = achivements.appendChild(singerName);
+
 }
 
 function addToCurrentMusic(){
     
 }
+const range = document.querySelector('.hp_range');
+const player = document.querySelector('#audio_player');
 
 const playSong = ()=>{
-    
+    range.parentElement.classList.add('playing');
+    player.play();
 }
 const pauseSong = ()=>{
-    
+    const player = document.querySelector('#audio_player');
+    player.pause();
 }
+  
+player.addEventListener("timeupdate", function() {
+    var currentTime = player.currentTime;
+    var duration = player.duration;
+    range.stop(true,true).animate({'width':(currentTime +.25)/duration*100+'%'},250,'linear');
+});

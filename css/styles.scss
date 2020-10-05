@@ -55,7 +55,7 @@ body{
         }
         .input-wrapper{
             // padding: 0;
-            width: 500px;
+            min-width: 140px;
             height: 50px;
             display: flex;
             overflow: hidden;
@@ -109,8 +109,63 @@ body{
                     font-size: 24px !important;
                 }
             }
+            
         }
     }
+}
+
+// Song player
+.song_player_wrapper{
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 4em 0;
+    color: #fff;
+
+    .music_card{
+        display: flex;
+        gap: 2rem;
+    }
+    .music_details{
+        flex: 1;
+
+        .control_btns{
+            #playBtn,#pauseBtn{   
+                padding: 1rem 3.6rem;
+                border: 2px solid #fff;
+                border-radius: 8px;
+            }
+        }
+    }
+    .music_heading{
+        font-size: 1.4rem;
+        color: #fff;
+        text-transform: capitalize;
+    }
+    .music_achivements{
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(100px,auto));
+        gap: 10px;
+        font-size: 18px;
+        
+        margin: 10px 0;
+        color: rgba(0,0,0,0.5);
+        i{
+            margin-right: 5px;
+            font-size: 14px;
+        }
+    }
+    .music_description{
+        // width: ;
+        font-size: 12px;
+        margin: 10px 0;
+        overflow: hidden;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+        font-family:cursive ,sans-serif;
+    }
+    
 }
 
 .outer-wrapper{
@@ -135,7 +190,8 @@ section{
         align-items: center;
         padding: 0.4rem 10px;
         border: 1px solid rgba(0,0,0,0.5);
-        width: 80%;
+        border-radius: 10px;
+        width: 95%;
         background: #fff;
         margin: 0 auto;
         transition: background 0.3s ease-out;
@@ -178,41 +234,7 @@ section{
                 text-overflow: ellipsis;
                 font-family: 'Roboto',sans-serif;
             }  
-            .control_btns{
-                display: flex;
-                gap: 1rem;
-                span{
-                    cursor: pointer;
-                    padding: 5px 14px;
-                    color: rgba(0,0,0,.4);
-                }
-                #playBtn{
-                    padding: 5px 14px;
-                    background: rgba(0,0,0,0.5);
-                    border-radius: 5px;
-                    width: 5em;
-                    text-align: center;
-                    color: #fff;
-                    font-family: "Roboto", sans-serif;
-                    transition: background 0.6s ease-out;
-                    &:hover{
-                        background: rgba(0,0,0,0.8);
-                    }
-                }
-                #pauseBtn{
-                    padding: 5px 14px;
-                    background: rgba(0,0,0,0.5);
-                    border-radius: 5px;
-                    width: 5em;
-                    text-align: center;
-                    color: #fff;
-                    font-family: "Roboto", sans-serif;
-                    transition: background 0.3s ease-out;
-                    &:hover{
-                        background: rgba(0,0,0,0.8);
-                    }
-                }
-            }
+            
         }
 
         &:hover{
@@ -222,6 +244,57 @@ section{
     }
 }
 
+.control_btns{
+    display: flex;
+    gap: 1rem;
+    span{
+        cursor: pointer;
+        padding: 5px 14px;
+        color: rgba(0,0,0,.4);
+    }
+    #playBtn{
+        padding: 10px 30px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+        transition: background 0.6s ease-out;
+        &:hover{
+            background: rgba(0,0,0,0.8);
+        }
+    }
+    #pauseBtn{
+        padding: 10px 30px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+        transition: background 0.3s ease-out;
+        &:hover{
+            background: rgba(0,0,0,0.8);
+        }
+    }
+}
+
+@media screen and (min-width:1020px){
+    .music_wrapper{
+        grid-template-columns: 2fr 1fr;
+
+        .music_card{
+            width: 80%;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    .music_achivements{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+    }
+}
 @media screen and (min-width:1020px){
     .music_wrapper{
         grid-template-columns: 2fr 1fr;

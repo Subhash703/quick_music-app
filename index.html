@@ -28,6 +28,41 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Song player -->
+        <div class="song_player_wrapper">
+            <div class="music_card">
+                <img src="./src/img1.jpg" alt="Someone you loved">
+                <div class="music_details">
+                    <h3 class="music_heading">I Tried So Hard - Linkin Park</h3>
+                    <spna class="music_achivements">
+                        <span class="ratings">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                        <span class="singer_name"><i class="fas fa-user"></i> Linkin Park</span>
+                        <spam class="published_year">2 year ago</spam>
+                        <span class="played-times"><i class="fas fa-play"></i>83.4k</span>
+                    </spna>
+                    <p class="music_description">
+                        linking park, one of the best singers ,In The End - Linkin Park
+                    </p>
+                    <div class="hp_slide">
+                        <div class="hp_range"></div>
+                   </div>
+                    <audio src="./src/Linkin Park - In The End.mp3" id="audio_player"></audio>
+                    <div class="control_btns">
+                        <span id="playBtn" onClick="javascript:playSong()">
+                            Play
+                        </span>
+                        <span id="pauseBtn" onClick="javascript:pauseSong()">
+                            Pause
+                        </span>
+                        <span class="share">
+                            <i class="fas fa-share"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="outer-wrapper">
         <section class="music_wrapper">
@@ -43,14 +78,17 @@
                             <span class="played-times"><i class="fas fa-play"></i>83.4k</span>
                         </spna>
                         <p class="music_description">
-                            linking park, one of the best singers ,In The End - Linkin Park (With) music file uploaded on Aug 21st, 2008 by Liamuzumaki.
+                            linking park, one of the best singers ,In The End - Linkin Park
                         </p>
-
+                        <div class="hp_slide">
+                            <div class="hp_range"></div>
+                       </div>
+                        <audio src="./src/Linkin Park - In The End.mp3" id="audio_player"></audio>
                         <div class="control_btns">
-                            <span id="playBtn">
+                            <span id="playBtn" onClick="javascript:playSong()">
                                 Play
                             </span>
-                            <span id="pauseBtn">
+                            <span id="pauseBtn" onClick="javascript:pauseSong()">
                                 Pause
                             </span>
                             <span class="share">

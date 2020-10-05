@@ -72,7 +72,7 @@ body {
 }
 
 .external__wrapper nav .input-wrapper {
-  width: 500px;
+  min-width: 140px;
   height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,6 +139,65 @@ body {
   font-size: 24px !important;
 }
 
+.song_player_wrapper {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 4em 0;
+  color: #fff;
+}
+
+.song_player_wrapper .music_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.song_player_wrapper .music_details {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.song_player_wrapper .music_details .control_btns #playBtn, .song_player_wrapper .music_details .control_btns #pauseBtn {
+  padding: 1rem 3.6rem;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.song_player_wrapper .music_heading {
+  font-size: 1.4rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.song_player_wrapper .music_achivements {
+  width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(100px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  gap: 10px;
+  font-size: 18px;
+  margin: 10px 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.song_player_wrapper .music_achivements i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.song_player_wrapper .music_description {
+  font-size: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  font-family: cursive ,sans-serif;
+}
+
 .outer-wrapper {
   width: 100%;
   background-color: #fff;
@@ -173,7 +232,8 @@ section {
           align-items: center;
   padding: 0.4rem 10px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  width: 80%;
+  border-radius: 10px;
+  width: 95%;
   background: #fff;
   margin: 0 auto;
   -webkit-transition: background 0.3s ease-out;
@@ -226,24 +286,28 @@ section {
   font-family: 'Roboto',sans-serif;
 }
 
-.music_wrapper .music_card .music_details .control_btns {
+.music_wrapper .music_card:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: #000;
+}
+
+.control_btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
-.music_wrapper .music_card .music_details .control_btns span {
+.control_btns span {
   cursor: pointer;
   padding: 5px 14px;
   color: rgba(0, 0, 0, 0.4);
 }
 
-.music_wrapper .music_card .music_details .control_btns #playBtn {
-  padding: 5px 14px;
+.control_btns #playBtn {
+  padding: 10px 30px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  width: 5em;
   text-align: center;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -251,15 +315,14 @@ section {
   transition: background 0.6s ease-out;
 }
 
-.music_wrapper .music_card .music_details .control_btns #playBtn:hover {
+.control_btns #playBtn:hover {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.music_wrapper .music_card .music_details .control_btns #pauseBtn {
-  padding: 5px 14px;
+.control_btns #pauseBtn {
+  padding: 10px 30px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  width: 5em;
   text-align: center;
   color: #fff;
   font-family: "Roboto", sans-serif;
@@ -267,13 +330,33 @@ section {
   transition: background 0.3s ease-out;
 }
 
-.music_wrapper .music_card .music_details .control_btns #pauseBtn:hover {
+.control_btns #pauseBtn:hover {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.music_wrapper .music_card:hover {
-  background: rgba(0, 0, 0, 0.1);
-  border-color: #000;
+@media screen and (min-width: 1020px) {
+  .music_wrapper {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
+  .music_wrapper .music_card {
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .music_achivements {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
 }
 
 @media screen and (min-width: 1020px) {
