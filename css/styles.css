@@ -21,12 +21,12 @@ body {
 
 .external__wrapper .background {
   position: absolute;
-  top: -10%;
+  top: -50%;
   left: -10%;
-  width: 110%;
-  height: 110%;
+  bottom: 0%;
+  right: -10%;
   z-index: 0;
-  background: transparent url("../src/background.jpg") right center no-repeat;
+  background: transparent url("../src/background1.jpg") right center no-repeat;
   background-size: 100% auto;
   -webkit-filter: blur(15px);
           filter: blur(15px);
@@ -142,8 +142,16 @@ body {
 .song_player_wrapper {
   width: 100%;
   max-width: 1240px;
-  margin: 0 auto;
-  padding: 4em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4em 2em;
   color: #fff;
 }
 
@@ -160,14 +168,9 @@ body {
           flex: 1;
 }
 
-.song_player_wrapper .music_details .control_btns #playBtn, .song_player_wrapper .music_details .control_btns #pauseBtn {
-  padding: 1rem 3.6rem;
-  border: 2px solid #fff;
-  border-radius: 8px;
-}
-
 .song_player_wrapper .music_heading {
-  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-size: clamp(1.8rem, 2rem, 2.8rem);
   color: #fff;
   text-transform: capitalize;
 }
@@ -190,12 +193,128 @@ body {
 }
 
 .song_player_wrapper .music_description {
-  font-size: 12px;
+  width: 100%;
+  font-size: 16px;
   margin: 10px 0;
   overflow: hidden;
+  white-space: nowrap;
   white-space: pre-line;
   text-overflow: ellipsis;
   font-family: cursive ,sans-serif;
+}
+
+.song_player_wrapper .control_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.song_player_wrapper .control_btns span {
+  cursor: pointer;
+  padding: 5px 14px;
+  color: #fff;
+  max-width: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 820px) {
+  .song_player_wrapper img {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .song_player_wrapper .control_btns span {
+    font-size: 14px;
+    padding: 5px 12px;
+  }
+  .song_player_wrapper .control_btns #playBtn, .song_player_wrapper .control_btns #pauseBtn {
+    padding: 5px 14px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .song_player_wrapper .music_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+  .song_player_wrapper .music_card .music_heading {
+    text-align: center;
+  }
+  .song_player_wrapper img {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  .song_player_wrapper .music_achivements {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(100px, auto))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 10px;
+    font-size: 14px;
+    margin: 10px 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .song_player_wrapper .music_achivements i {
+    margin-right: 5px;
+    font-size: 10px;
+  }
+  .song_player_wrapper .control_btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .external__wrapper .background {
+    position: absolute;
+    top: -60%;
+    background: transparent url("../src/background1.jpg") right center no-repeat;
+    background-size: 100% auto;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: -1;
+  }
 }
 
 .outer-wrapper {
@@ -236,6 +355,7 @@ section {
   width: 95%;
   background: #fff;
   margin: 0 auto;
+  margin-bottom: 2rem;
   -webkit-transition: background 0.3s ease-out;
   transition: background 0.3s ease-out;
 }
@@ -278,10 +398,11 @@ section {
 }
 
 .music_wrapper .music_card .music_details .music_description {
+  max-width: 250px;
   font-size: 12px;
   margin: 10px 0;
+  white-space: nowrap;
   overflow: hidden;
-  white-space: pre-line;
   text-overflow: ellipsis;
   font-family: 'Roboto',sans-serif;
 }
@@ -291,47 +412,28 @@ section {
   border-color: #000;
 }
 
-.control_btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
+.artist_albums {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, auto))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+  gap: 20px;
 }
 
-.control_btns span {
-  cursor: pointer;
-  padding: 5px 14px;
-  color: rgba(0, 0, 0, 0.4);
+.artist_albums .artist_card-wrapper {
+  max-height: 240px;
+  height: 150px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
 }
 
-.control_btns #playBtn {
-  padding: 10px 30px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  text-align: center;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  -webkit-transition: background 0.6s ease-out;
-  transition: background 0.6s ease-out;
-}
-
-.control_btns #playBtn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.control_btns #pauseBtn {
-  padding: 10px 30px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  text-align: center;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
-  -webkit-transition: background 0.3s ease-out;
-  transition: background 0.3s ease-out;
-}
-
-.control_btns #pauseBtn:hover {
-  background: rgba(0, 0, 0, 0.8);
+.artist_albums img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (min-width: 1020px) {

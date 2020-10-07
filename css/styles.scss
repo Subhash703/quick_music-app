@@ -21,12 +21,12 @@ body{
 
     .background{
         position: absolute;
-        top: -10%;
+        top: -50%;
         left: -10%;
-        width: 110%;
-        height: 110%;
+        bottom: 0%;
+        right: -10%;
         z-index: 0;
-        background: transparent url('../src/background.jpg') right center no-repeat;
+        background: transparent url('../src/background1.jpg') right center no-repeat;
         background-size: 100% auto;
         filter: blur(15px);
         display: flex;
@@ -118,8 +118,10 @@ body{
 .song_player_wrapper{
     width: 100%;
     max-width: 1240px;
-    margin: 0 auto;
-    padding: 4em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 2em;
     color: #fff;
 
     .music_card{
@@ -129,16 +131,11 @@ body{
     .music_details{
         flex: 1;
 
-        .control_btns{
-            #playBtn,#pauseBtn{   
-                padding: 1rem 3.6rem;
-                border: 2px solid #fff;
-                border-radius: 8px;
-            }
-        }
+        
     }
     .music_heading{
-        font-size: 1.4rem;
+        letter-spacing: 2px;
+        font-size: clamp(1.8rem, 2rem, 2.8rem);
         color: #fff;
         text-transform: capitalize;
     }
@@ -157,17 +154,103 @@ body{
         }
     }
     .music_description{
-        // width: ;
-        font-size: 12px;
+        width: 100%;
+        font-size: 16px;
         margin: 10px 0;
         overflow: hidden;
+        white-space: nowrap;
         white-space: pre-line;
         text-overflow: ellipsis;
         font-family:cursive ,sans-serif;
     }
-    
+    .control_btns{
+        display: flex;
+        gap: 1rem;
+        span{
+            cursor: pointer;
+            padding: 5px 14px;
+            color: #fff;
+            max-width: 100px;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        
+    }
+
+    @media screen and (max-width:820px){
+        img{
+            transform: scale(0.8);
+        }
+        .control_btns{
+            span{
+                font-size: 14px;
+                padding: 5px 12px;
+            }
+        }
+        .control_btns{
+            #playBtn,#pauseBtn{   
+                padding: 5px 14px;
+                border: 2px solid #fff;
+                border-radius: 8px;
+            }
+        }
+    }
+    @media screen and (max-width:520px){
+
+        .music_card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 0;
+            .music_heading{
+                text-align: center;
+            }
+        }
+
+        img{
+            transform: scale(0.5);
+        }
+        .music_achivements{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(100px,auto));
+            gap: 10px;
+            font-size: 14px;
+            
+            margin: 10px 0;
+            color: rgba(0,0,0,0.5);
+            i{
+                margin-right: 5px;
+                font-size: 10px;
+            }
+        }
+        .control_btns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
+@media screen and (max-width:620px){
+    .external__wrapper{
+    .background{
+        position: absolute;
+        top: -60%;
+        background: transparent url('../src/background1.jpg') right center no-repeat;
+        background-size: 100% auto;
+        filter: blur(15px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+    }
+}
+}
 .outer-wrapper{
     width: 100%;
     background-color: #fff;
@@ -194,12 +277,14 @@ section{
         width: 95%;
         background: #fff;
         margin: 0 auto;
+        margin-bottom: 2rem;
         transition: background 0.3s ease-out;
 
         img{
             padding: 10px;
             object-fit: contain;
             width: 240px;
+            // margin-left: ;
         }
         .music_details{
             padding: 10px;
@@ -226,11 +311,11 @@ section{
                 }
             }
             .music_description{
-                // width: ;
+                max-width:250px ;
                 font-size: 12px;
                 margin: 10px 0;
+                white-space: nowrap;
                 overflow: hidden;
-                white-space: pre-line;
                 text-overflow: ellipsis;
                 font-family: 'Roboto',sans-serif;
             }  
@@ -241,42 +326,33 @@ section{
             background: rgba(0,0,0,0.1);
             border-color: #000;
         }
+        
     }
 }
 
-.control_btns{
-    display: flex;
-    gap: 1rem;
-    span{
-        cursor: pointer;
-        padding: 5px 14px;
-        color: rgba(0,0,0,.4);
+
+
+
+// Atrist Albums 
+.artist_albums{
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,auto));
+    gap: 20px;
+
+    .artist_card-wrapper{
+        max-height: 240px;
+        height: 150px;
+        border: 2px solid rgba(0,0,0,0.6);
     }
-    #playBtn{
-        padding: 10px 30px;
-        background: rgba(0,0,0,0.5);
-        border-radius: 5px;
-        text-align: center;
-        color: #fff;
-        font-family: "Roboto", sans-serif;
-        transition: background 0.6s ease-out;
-        &:hover{
-            background: rgba(0,0,0,0.8);
-        }
-    }
-    #pauseBtn{
-        padding: 10px 30px;
-        background: rgba(0,0,0,0.5);
-        border-radius: 5px;
-        text-align: center;
-        color: #fff;
-        font-family: "Roboto", sans-serif;
-        transition: background 0.3s ease-out;
-        &:hover{
-            background: rgba(0,0,0,0.8);
-        }
+
+    img{
+        object-fit: cover;
+        height:100%;
+        width: 100%;
     }
 }
+
 
 @media screen and (min-width:1020px){
     .music_wrapper{
